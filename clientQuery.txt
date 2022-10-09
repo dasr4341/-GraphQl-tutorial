@@ -1,0 +1,29 @@
+--------------------------- to get userById ---------------
+query getUserById($userId:ID!){
+userById(id:$userId){
+name
+}
+}
+---------------------------- to get allUser -------------------
+query getAllUsers{
+getAllUsers{
+name
+}
+}
+--------------------------- create user ---------------------------
+mutation createUser($userNew:UserInput!){
+  user:signUpUser(newData:$userNew){ 
+    id
+    name
+  }
+}
+            ====== Query Variables ========
+{
+  "userNew": {
+    "name": "navin",
+    "email": "sdsad@sd.com",
+    "phone": "12356789800",
+    "password": "12345"
+  }
+}
+------------------------------------------------------
