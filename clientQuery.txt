@@ -11,9 +11,9 @@ name
 }
 }
 --------------------------- create user ---------------------------
-mutation createUser($userNew:UserInput!){
-  user:signUpUser(newData:$userNew){ 
-    id
+mutation createUser($userNew:UserSignUpInput!){
+  user:signUpUser(signUpUserData:$userNew){ 
+    _id,
     name
   }
 }
@@ -21,9 +21,25 @@ mutation createUser($userNew:UserInput!){
 {
   "userNew": {
     "name": "navin",
-    "email": "sdsad@sd.com",
+    "email": "svaadsad@sd.com",
     "phone": "12356789800",
     "password": "12345"
   }
 }
-------------------------------------------------------
+------------------------------------------------------ signIn
+
+mutation signIn($signInData:UserSignInInput!){
+  user:signInUser(signInUserData:$signInData){ 
+    token
+  }
+}
+
+====== Query Variables ========
+
+{
+  "signInData":{
+      "email": "svdsad@sd.com",
+    "password":"12345"
+}
+}
+------------------------------------------------
