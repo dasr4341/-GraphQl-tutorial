@@ -20,7 +20,5 @@ const typeDefs = gql`
         phone:String!
         password:String!
     }
-
-    
 `;
 export default typeDefs;
